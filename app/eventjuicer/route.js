@@ -1,7 +1,12 @@
 
 
 
-export async function GET() {
+export async function GET(request) {
+
+    const { searchParams } = new URL(request.url)
+
+    console.log(searchParams)
+
     const res = await fetch('https://api.eventjuicer.com/v1/public/hosts', {
       headers: {
         'Content-Type': 'application/json'
